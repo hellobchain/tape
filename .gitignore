@@ -4,7 +4,6 @@
 *.dll
 *.so
 *.dylib
-./tape
 
 # Test binary, build with `go test -c`
 *.test
@@ -20,5 +19,4 @@ e2e/Tape.log
 # local dependency
 vendor
 
-tape
 Tape.log
