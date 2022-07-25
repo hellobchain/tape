@@ -1,14 +1,12 @@
 FROM golang:1.16 as builder
-ARG Version
 ARG CommitVersion
 ARG BuildTime
 LABEL version=$Version comshbuimit=$CommitVersion create_time=$BuildTime
 ENV GOPROXY https://goproxy.cn
 ADD . /tape
 WORKDIR /tape
-RUN  go version && go env && gcc -v && \
-     CGO_ENABLED=0 GOOS=linux GOARCH=amd64  go build \
-     -v -o tape cmd/tape/main.go
+ARG GO_TAGS
+RUN make tape GO_TAGS=${GO_TAGS}
 
 #生成中间镜像后,将build之后的可执行文件考到新的镜像中
 FROM  alpine:3.14 as tape
