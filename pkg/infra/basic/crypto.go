@@ -29,6 +29,7 @@ type CryptoImpl struct {
 	Creator  []byte
 	PrivKey  *ecdsa.PrivateKey
 	SignCert *x509.Certificate
+	HashType cryptosm.Hash
 }
 
 func (s *CryptoImpl) Sign(msg []byte) ([]byte, error) {
@@ -50,11 +51,7 @@ func (s *CryptoImpl) Serialize() ([]byte, error) {
 }
 
 func (s *CryptoImpl) Hash() cryptosm.Hash {
-	if s.PrivKey.Params().Name == ecdsa.SM2CurveName {
-		return cryptosm.SM3
-	} else {
-		return cryptosm.SHA256
-	}
+	return s.HashType
 }
 
 func (s *CryptoImpl) NewSignatureHeader() (*common.SignatureHeader, error) {
