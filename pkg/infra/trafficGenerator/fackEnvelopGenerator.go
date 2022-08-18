@@ -32,7 +32,7 @@ func (initiator *FackEnvelopGenerator) Start() {
 			i++
 		}
 		creator, _ := initiator.Crypto.Serialize()
-		txid := protoutil.ComputeTxID(nonce, creator)
+		txid := protoutil.ComputeTxID(nonce, creator, initiator.Crypto.Hash())
 		payloadBytes, _ := protoutil.GetBytesPayload(&common.Payload{
 			Header: &common.Header{
 				ChannelHeader: protoutil.MarshalOrPanic(&common.ChannelHeader{

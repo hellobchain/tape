@@ -53,7 +53,7 @@ func CreateProposal(signer infra.Crypto, logger *wlogging.WswLogger, channel, cc
 		return nil, err
 	}
 
-	prop, txid, err := protoutil.CreateChaincodeProposal(common.HeaderType_ENDORSER_TRANSACTION, channel, invocation, creator)
+	prop, txid, err := protoutil.CreateChaincodeProposal(common.HeaderType_ENDORSER_TRANSACTION, channel, invocation, creator, signer.Hash())
 	if err != nil {
 		return nil, err
 	}

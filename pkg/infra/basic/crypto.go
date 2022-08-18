@@ -2,8 +2,8 @@ package basic
 
 import (
 	"crypto/rand"
-	"crypto/sha256"
 	"encoding/asn1"
+	"github.com/wsw365904/cryptosm"
 	"github.com/wsw365904/cryptosm/ecdsa"
 	"github.com/wsw365904/cryptosm/x509"
 	"math/big"
@@ -32,7 +32,7 @@ type CryptoImpl struct {
 }
 
 func (s *CryptoImpl) Sign(msg []byte) ([]byte, error) {
-	ri, si, err := ecdsa.Sign(rand.Reader, s.PrivKey, digest(msg))
+	ri, si, err := ecdsa.Sign(rand.Reader, s.PrivKey, digest(msg, s.Hash()))
 	if err != nil {
 		return nil, err
 	}
@@ -47,6 +47,14 @@ func (s *CryptoImpl) Sign(msg []byte) ([]byte, error) {
 
 func (s *CryptoImpl) Serialize() ([]byte, error) {
 	return s.Creator, nil
+}
+
+func (s *CryptoImpl) Hash() cryptosm.Hash {
+	if s.PrivKey.Params().Name == ecdsa.SM2CurveName {
+		return cryptosm.SM3
+	} else {
+		return cryptosm.SHA256
+	}
 }
 
 func (s *CryptoImpl) NewSignatureHeader() (*common.SignatureHeader, error) {
@@ -65,8 +73,8 @@ func (s *CryptoImpl) NewSignatureHeader() (*common.SignatureHeader, error) {
 	}, nil
 }
 
-func digest(in []byte) []byte {
-	h := sha256.New()
+func digest(in []byte, hashType cryptosm.Hash) []byte {
+	h := hashType.New()
 	h.Write(in)
 	return h.Sum(nil)
 }

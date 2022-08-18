@@ -8,7 +8,7 @@ package protoutil
 
 import (
 	"bytes"
-	"crypto/sha256"
+	"github.com/wsw365904/cryptosm"
 
 	"github.com/golang/protobuf/proto"
 	"github.com/hyperledger/fabric-protos-go/common"
@@ -97,6 +97,7 @@ func CreateSignedEnvelopeWithTLSBinding(
 type Signer interface {
 	Sign(msg []byte) ([]byte, error)
 	Serialize() ([]byte, error)
+	Hash() cryptosm.Hash
 }
 
 // CreateSignedTx assembles an Envelope message from proposal, endorsements,
@@ -225,7 +226,7 @@ func CreateProposalResponse(
 
 	// obtain the proposal hash given proposal header, payload and the
 	// requested visibility
-	pHashBytes, err := GetProposalHash1(hdr, payl)
+	pHashBytes, err := GetProposalHash1(hdr, payl, signingEndorser.Hash())
 	if err != nil {
 		return nil, errors.WithMessage(err, "error computing proposal hash")
 	}
@@ -309,7 +310,7 @@ func GetBytesProposalPayloadForTx(
 
 // GetProposalHash1 gets the proposal hash bytes after sanitizing the
 // chaincode proposal payload according to the rules of visibility
-func GetProposalHash1(header *common.Header, ccPropPayl []byte) ([]byte, error) {
+func GetProposalHash1(header *common.Header, ccPropPayl []byte, hashType cryptosm.Hash) ([]byte, error) {
 	// check for nil argument
 	if header == nil ||
 		header.ChannelHeader == nil ||
@@ -329,7 +330,7 @@ func GetProposalHash1(header *common.Header, ccPropPayl []byte) ([]byte, error) 
 		return nil, err
 	}
 
-	hash2 := sha256.New()
+	hash2 := hashType.New()
 	// hash the serialized Channel Header object
 	hash2.Write(header.ChannelHeader)
 	// hash the serialized Signature Header object
