@@ -7,7 +7,7 @@ SPDX-License-Identifier: Apache-2.0
 package comm
 
 import (
-	"github.com/wsw365904/cryptosm/x509"
+	"github.com/wsw365904/newcryptosm/x509"
 	"time"
 
 	"google.golang.org/grpc"

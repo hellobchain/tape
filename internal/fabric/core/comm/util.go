@@ -8,7 +8,7 @@ package comm
 
 import (
 	"encoding/pem"
-	"github.com/wsw365904/cryptosm/x509"
+	"github.com/wsw365904/newcryptosm/x509"
 )
 
 // AddPemToCertPool adds PEM-encoded certs to a cert pool

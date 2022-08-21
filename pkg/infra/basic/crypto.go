@@ -3,9 +3,9 @@ package basic
 import (
 	"crypto/rand"
 	"encoding/asn1"
-	"github.com/wsw365904/cryptosm"
-	"github.com/wsw365904/cryptosm/ecdsa"
-	"github.com/wsw365904/cryptosm/x509"
+	"github.com/wsw365904/newcryptosm"
+	"github.com/wsw365904/newcryptosm/ecdsa"
+	"github.com/wsw365904/newcryptosm/x509"
 	"math/big"
 
 	"github.com/wsw365904/tape/internal/fabric/bccsp/utils"
@@ -29,7 +29,7 @@ type CryptoImpl struct {
 	Creator  []byte
 	PrivKey  *ecdsa.PrivateKey
 	SignCert *x509.Certificate
-	HashType cryptosm.Hash
+	HashType newcryptosm.Hash
 }
 
 func (s *CryptoImpl) Sign(msg []byte) ([]byte, error) {
@@ -50,7 +50,7 @@ func (s *CryptoImpl) Serialize() ([]byte, error) {
 	return s.Creator, nil
 }
 
-func (s *CryptoImpl) Hash() cryptosm.Hash {
+func (s *CryptoImpl) Hash() newcryptosm.Hash {
 	return s.HashType
 }
 
@@ -70,7 +70,7 @@ func (s *CryptoImpl) NewSignatureHeader() (*common.SignatureHeader, error) {
 	}, nil
 }
 
-func digest(in []byte, hashType cryptosm.Hash) []byte {
+func digest(in []byte, hashType newcryptosm.Hash) []byte {
 	h := hashType.New()
 	h.Write(in)
 	return h.Sum(nil)

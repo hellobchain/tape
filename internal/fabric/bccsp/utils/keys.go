@@ -10,8 +10,8 @@ import (
 	"encoding/pem"
 	"errors"
 	"fmt"
-	"github.com/wsw365904/cryptosm/ecdsa"
-	"github.com/wsw365904/cryptosm/x509"
+	"github.com/wsw365904/newcryptosm/ecdsa"
+	"github.com/wsw365904/newcryptosm/x509"
 )
 
 // DERToPrivateKey unmarshals a der to private key

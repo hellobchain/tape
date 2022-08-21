@@ -2,9 +2,9 @@ package basic
 
 import (
 	"encoding/pem"
-	"github.com/wsw365904/cryptosm"
-	"github.com/wsw365904/cryptosm/ecdsa"
-	"github.com/wsw365904/cryptosm/x509"
+	"github.com/wsw365904/newcryptosm"
+	"github.com/wsw365904/newcryptosm/ecdsa"
+	"github.com/wsw365904/newcryptosm/x509"
 	"io/ioutil"
 	"sync"
 
@@ -146,11 +146,11 @@ func (c Config) LoadCrypto() (*CryptoImpl, error) {
 	if err != nil {
 		return nil, errors.Wrapf(err, "error get msp id")
 	}
-	var hashType cryptosm.Hash
-	if priv.Params().Name == ecdsa.SM2CurveName {
-		hashType = cryptosm.SM3
+	var hashType newcryptosm.Hash
+	if ecdsa.IsSM2(priv.Params()) {
+		hashType = newcryptosm.SM3
 	} else {
-		hashType = cryptosm.SHA256
+		hashType = newcryptosm.SHA256
 	}
 	return &CryptoImpl{
 		Creator:  name,

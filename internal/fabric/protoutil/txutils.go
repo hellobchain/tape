@@ -8,12 +8,11 @@ package protoutil
 
 import (
 	"bytes"
-	"github.com/wsw365904/cryptosm"
-
 	"github.com/golang/protobuf/proto"
 	"github.com/hyperledger/fabric-protos-go/common"
 	"github.com/hyperledger/fabric-protos-go/peer"
 	"github.com/pkg/errors"
+	"github.com/wsw365904/newcryptosm"
 )
 
 // GetEnvelopeFromBlock gets an envelope from a block's Data field.
@@ -97,7 +96,7 @@ func CreateSignedEnvelopeWithTLSBinding(
 type Signer interface {
 	Sign(msg []byte) ([]byte, error)
 	Serialize() ([]byte, error)
-	Hash() cryptosm.Hash
+	Hash() newcryptosm.Hash
 }
 
 // CreateSignedTx assembles an Envelope message from proposal, endorsements,
@@ -310,7 +309,7 @@ func GetBytesProposalPayloadForTx(
 
 // GetProposalHash1 gets the proposal hash bytes after sanitizing the
 // chaincode proposal payload according to the rules of visibility
-func GetProposalHash1(header *common.Header, ccPropPayl []byte, hashType cryptosm.Hash) ([]byte, error) {
+func GetProposalHash1(header *common.Header, ccPropPayl []byte, hashType newcryptosm.Hash) ([]byte, error) {
 	// check for nil argument
 	if header == nil ||
 		header.ChannelHeader == nil ||

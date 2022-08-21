@@ -9,8 +9,8 @@ package comm
 import (
 	"context"
 	"github.com/pkg/errors"
-	"github.com/wsw365904/cryptosm/tls"
-	credentials2 "github.com/wsw365904/cryptosm/tls/credentials"
+	"github.com/wsw365904/newcryptosm/tls"
+	credentials2 "github.com/wsw365904/newcryptosm/tls/credentials"
 	"google.golang.org/grpc/credentials"
 	"net"
 )

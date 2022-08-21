@@ -2,7 +2,7 @@ package basic
 
 import (
 	"context"
-	"github.com/wsw365904/cryptosm/tls"
+	"github.com/wsw365904/newcryptosm/tls"
 	"github.com/wsw365904/wswlog/wlogging"
 	"time"
 

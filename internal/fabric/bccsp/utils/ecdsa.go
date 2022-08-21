@@ -11,7 +11,8 @@ import (
 	"encoding/asn1"
 	"errors"
 	"fmt"
-	"github.com/wsw365904/cryptosm/ecdsa"
+	"github.com/wsw365904/newcryptosm/ecdsa"
+	"github.com/wsw365904/newcryptosm/sm2"
 	"math/big"
 )
 
@@ -29,7 +30,7 @@ var (
 		elliptic.P256(): new(big.Int).Rsh(elliptic.P256().Params().N, 1),
 		elliptic.P384(): new(big.Int).Rsh(elliptic.P384().Params().N, 1),
 		elliptic.P521(): new(big.Int).Rsh(elliptic.P521().Params().N, 1),
-		ecdsa.SM2():     new(big.Int).Rsh(ecdsa.SM2().Params().N, 1),
+		sm2.SM2():       new(big.Int).Rsh(sm2.SM2().Params().N, 1),
 	}
 )
 
@@ -61,7 +62,7 @@ func UnmarshalECDSASignature(raw []byte) (*big.Int, *big.Int, error) {
 
 // IsLowS IsLow checks that s is a low-S
 func IsLowS(k *ecdsa.PublicKey, s *big.Int) (bool, error) {
-	if k.Params().Name == ecdsa.SM2CurveName {
+	if ecdsa.IsSM2(k.Params()) {
 		return true, nil
 	}
 	halfOrder, ok := curveHalfOrders[k.Curve]

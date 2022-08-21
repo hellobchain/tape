@@ -8,8 +8,8 @@ package comm
 
 import (
 	"context"
-	"github.com/wsw365904/cryptosm/tls"
-	"github.com/wsw365904/cryptosm/x509"
+	"github.com/wsw365904/newcryptosm/tls"
+	"github.com/wsw365904/newcryptosm/x509"
 	"time"
 
 	grpc_opentracing "github.com/grpc-ecosystem/go-grpc-middleware/tracing/opentracing"

@@ -16,10 +16,10 @@ require (
 	github.com/rcrowley/go-metrics v0.0.0-20201227073835-cf1acfcdf475 // indirect
 	github.com/uber/jaeger-client-go v2.29.1+incompatible
 	github.com/uber/jaeger-lib v2.4.1+incompatible // indirect
-	github.com/wsw365904/cryptosm v0.0.0-20220724021241-cc89c1bd876c
+	github.com/wsw365904/newcryptosm v0.0.0-20220821120244-1d3c5ba2f14a
 	github.com/wsw365904/wswlog v0.0.0-20220708094655-a4c554b01c1b
 	golang.org/x/time v0.0.0-20210723032227-1f47c861a9ac
-	google.golang.org/grpc v1.47.0
+	google.golang.org/grpc v1.48.0
 	gopkg.in/alecthomas/kingpin.v2 v2.2.6
 	gopkg.in/yaml.v2 v2.4.0
 )
