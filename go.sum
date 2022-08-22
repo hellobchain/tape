@@ -927,8 +927,8 @@ github.com/vishvananda/netns v0.0.0-20200728191858-db3c7e526aae/go.mod h1:DD4vA1
 github.com/vishvananda/netns v0.0.0-20210104183010-2eb08e3e575f/go.mod h1:DD4vA1DwXk04H54A1oHXtwZmA0grkVMdPxx/VGLCah0=
 github.com/willf/bitset v1.1.11-0.20200630133818-d5bec3311243/go.mod h1:RjeCKbqT1RxIR/KWY6phxZiaY1IyutSBfGjNPySAYV4=
 github.com/willf/bitset v1.1.11/go.mod h1:83CECat5yLh5zVOf4P1ErAgKA5UDvKtgyUABdr3+MjI=
-github.com/wsw365904/newcryptosm v0.0.0-20220821120244-1d3c5ba2f14a h1:e4nOXfvcj5MZ9yNBCTmD1cWvl16c+rNzO2FXEJLyq8o=
-github.com/wsw365904/newcryptosm v0.0.0-20220821120244-1d3c5ba2f14a/go.mod h1:7L+vDLXwSCoeV2GxiYMx/nAHuCUAnKja3Dgr7QBj53Q=
+github.com/wsw365904/newcryptosm v0.0.0-20220822153922-8852ae7b6d34 h1:DgZxuAUiojAO5trv/cR/R3yDCaSscaVGQVSH5QbUdKY=
+github.com/wsw365904/newcryptosm v0.0.0-20220822153922-8852ae7b6d34/go.mod h1:7L+vDLXwSCoeV2GxiYMx/nAHuCUAnKja3Dgr7QBj53Q=
 github.com/wsw365904/wswlog v0.0.0-20220708094655-a4c554b01c1b h1:rYAR0/BZErJp1917eZwm/1Hjtl582Si9h5KhSCPXVUc=
 github.com/wsw365904/wswlog v0.0.0-20220708094655-a4c554b01c1b/go.mod h1:pZwqrFkJ8TGEpDKU0v8o84mBowUd8+DLciQ2nY0VMzQ=
 github.com/xeipuuv/gojsonpointer v0.0.0-20180127040702-4e3ac2762d5f/go.mod h1:N2zxlSyiKSe5eX1tZViRH5QA0qijqEDrYZiPEAiq3wU=
