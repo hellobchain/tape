@@ -17,7 +17,7 @@ require (
 	github.com/uber/jaeger-client-go v2.29.1+incompatible
 	github.com/uber/jaeger-lib v2.4.1+incompatible // indirect
 	github.com/wsw365904/newcryptosm v0.0.0-20220822153922-8852ae7b6d34
-	github.com/wsw365904/wswlog v0.0.0-20220708094655-a4c554b01c1b
+	github.com/wsw365904/wswlog v0.0.0-20220826082513-787d040d761f
 	golang.org/x/time v0.0.0-20210723032227-1f47c861a9ac
 	google.golang.org/grpc v1.48.0
 	gopkg.in/alecthomas/kingpin.v2 v2.2.6

@@ -929,8 +929,8 @@ github.com/willf/bitset v1.1.11-0.20200630133818-d5bec3311243/go.mod h1:RjeCKbqT
 github.com/willf/bitset v1.1.11/go.mod h1:83CECat5yLh5zVOf4P1ErAgKA5UDvKtgyUABdr3+MjI=
 github.com/wsw365904/newcryptosm v0.0.0-20220822153922-8852ae7b6d34 h1:DgZxuAUiojAO5trv/cR/R3yDCaSscaVGQVSH5QbUdKY=
 github.com/wsw365904/newcryptosm v0.0.0-20220822153922-8852ae7b6d34/go.mod h1:7L+vDLXwSCoeV2GxiYMx/nAHuCUAnKja3Dgr7QBj53Q=
-github.com/wsw365904/wswlog v0.0.0-20220708094655-a4c554b01c1b h1:rYAR0/BZErJp1917eZwm/1Hjtl582Si9h5KhSCPXVUc=
-github.com/wsw365904/wswlog v0.0.0-20220708094655-a4c554b01c1b/go.mod h1:pZwqrFkJ8TGEpDKU0v8o84mBowUd8+DLciQ2nY0VMzQ=
+github.com/wsw365904/wswlog v0.0.0-20220826082513-787d040d761f h1:Cs0nfj8GPlqpXSWUMP7k8/4/ea1PraTLopPmFOMi1Lk=
+github.com/wsw365904/wswlog v0.0.0-20220826082513-787d040d761f/go.mod h1:YUIhX9nApfRkOUF+Hv207zEsGLd5RC+HAlsqS43joY4=
 github.com/xeipuuv/gojsonpointer v0.0.0-20180127040702-4e3ac2762d5f/go.mod h1:N2zxlSyiKSe5eX1tZViRH5QA0qijqEDrYZiPEAiq3wU=
 github.com/xeipuuv/gojsonpointer v0.0.0-20190905194746-02993c407bfb h1:zGWFAtiMcyryUHoUjUJX0/lt1H2+i2Ka2n+D3DImSNo=
 github.com/xeipuuv/gojsonpointer v0.0.0-20190905194746-02993c407bfb/go.mod h1:N2zxlSyiKSe5eX1tZViRH5QA0qijqEDrYZiPEAiq3wU=
