@@ -1,7 +1,6 @@
 package observer
 
 import (
-	"fmt"
 	"github.com/wsw365904/wswlog/wlogging"
 	"sync"
 	"time"
@@ -38,7 +37,7 @@ func (o *EndorseObserver) Start() {
 			tapeSpan := basic.GetGlobalSpan()
 			tapeSpan.FinishWithMap(e.TxId, "", basic.TRANSCATIONSTART)
 			i++
-			fmt.Printf("Time %8.2fs\tTx %6d Processed\n", time.Since(o.Now).Seconds(), i)
+			o.logger.Infof("Time %8.2fs\tTx %6d Processed\n", time.Since(o.Now).Seconds(), i)
 			if o.n > 0 {
 				if o.n == i {
 					// consider with multiple threads need close this channel, need a once here to avoid channel been closed in multiple times

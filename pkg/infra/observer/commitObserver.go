@@ -1,7 +1,6 @@
 package observer
 
 import (
-	"fmt"
 	"github.com/wsw365904/wswlog/wlogging"
 	"math"
 	"sync"
@@ -87,7 +86,7 @@ func (o *CommitObserver) Start() {
 		block := r.GetBlock()
 		tx := len(block.Data.Data)
 		n += tx
-		fmt.Printf("From Orderer Time %8.2fs\tBlock %6d\t Tx %6d\n", time.Since(o.Now).Seconds(), block.Header.Number, tx)
+		o.logger.Debugf("From Orderer Time %8.2fs\tBlock %6d\t Tx %6d\n", time.Since(o.Now).Seconds(), block.Header.Number, tx)
 		for _, data := range block.Data.Data {
 			txID := ""
 			env, err := protoutil.GetEnvelopeFromBlock(data)

@@ -2,7 +2,6 @@ package observer
 
 import (
 	"context"
-	"fmt"
 	"github.com/wsw365904/wswlog/wlogging"
 	"sync"
 	"time"
@@ -110,7 +109,7 @@ func (bc *BlockCollector) commit(block *AddressedBlock) {
 		if bc.printResult {
 			// todo: logging
 			// receive tx over threshold
-			fmt.Printf("Time %8.2fs\tBlock %6d\tTx %6d\t \n", block.Now.Seconds(), block.Number, len(block.FilteredTransactions))
+			bc.logger.Infof("Time %8.2fs\tBlock %6d\tTx %6d\t \n", block.Now.Seconds(), block.Number, len(block.FilteredTransactions))
 			for _, b := range block.FilteredBlock.FilteredTransactions {
 				basic.LogEvent(bc.logger, b.Txid, "CommitAtPeersOverThreshold")
 				tapeSpan := basic.GetGlobalSpan()
